@@ -1,0 +1,45 @@
+<button
+  class="btn btn-dark fs-3 btn btn-outline-warning"
+  type="button"
+  id="button-addon2"
+>
+  pregunta
+</button>
+
+<ng-container *ngIf="preguntas">
+  <h2 class="title--cars">Pasa y Gana</h2>
+
+  <div
+    class="card text-white bg-dark mb-3 border-warning mb-3"
+    style="width: 18rem"
+  >
+    <div class="card-body">
+      <h5 class="card-title text-center">
+        {{ preguntas.pregunta | uppercase }}
+      </h5>
+      <ul>
+        <li *ngFor="let opciones of preguntas.opciones">
+          <label>
+            <label>
+              <input
+                type="radio"
+                name="respuesta"
+                value="{{ opciones }}"
+                (change)="traer($event)"
+              />
+              {{ opciones }}
+            </label>
+          </label>
+        </li>
+      </ul>
+      <p class="card-text">
+        tu respuesta es : <br />
+        {{ resultado }}
+      </p>
+      <p class="card-text">
+        score : <br />
+        {{ score | currency: "COP":"symbol" }}
+      </p>
+    </div>
+  </div>
+</ng-container>
