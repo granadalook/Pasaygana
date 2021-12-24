@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PreguntasComponent } from './components/preguntas/preguntas.component';
+import { SharedModule } from './shared/shared.module';
+
 
 @NgModule({
-  declarations: [AppComponent, PreguntasComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  declarations: [AppComponent,],
+  imports: [BrowserModule, AppRoutingModule, FormsModule,SharedModule],
   providers: [],
   bootstrap: [AppComponent],
 })
