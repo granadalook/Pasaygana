@@ -14,30 +14,39 @@ export class PreguntasComponent implements OnInit {
   pregunta: number = 1;
   score: number = 0;
   ganancia: number = 0;
+  borde:string=""
+  
 
   traer(event: any) {
     this.respuesta = event.target.value;
     setTimeout(() => {
       if (this.respuesta === this.preguntas?.respuesta) {
-        this.pregunta++;
-        this.resultado = 'respuesta correcta';
-        this.score = this.score + 1000000;
+        this.resultado = 'Correcta';
+        this.score = this.score + 5000000;
+        this.borde="border-success border-5"
         setTimeout(() => {
+          this.pregunta++;
           this.next();
           this.resultado = '';
-        }, 2000);
+          this.borde=''
+        }, 3000);
       }
       if (this.respuesta != this.preguntas?.respuesta) {
-        this.resultado = 'Incorrecto';
+        this.resultado = 'Incorrecta';
         this.score = 0;
-        this.pregunta = 1;
+        this.borde="border-danger border-5"
+        
         setTimeout(() => {
+          
+          this.pregunta = 1;
           this.next();
           this.resultado = '';
-        }, 2000);
+          this.borde=''
+        
+        }, 5000);
       } else {
       }
-    }, 3000);
+    }, 2000);
   }
 
   constructor(private preguntasServive: PreguntasService) {}
@@ -51,13 +60,20 @@ export class PreguntasComponent implements OnInit {
   next() {
     this.get(this.pregunta);
   }
-  end() {
+  end() { 
+    this.preguntas = undefined
     this.ganancia = this.score;
-    this.pregunta = 1;
-    this.score = 0;
+    
+    
     setTimeout(() => {
-      this.next();
+      this.score=0
+      this.ganancia=0
       this.resultado = '';
-    }, 1000);
+      this.pregunta = 1;
+      
+      
+    }, 5000);
   }
+ 
+  
 }
