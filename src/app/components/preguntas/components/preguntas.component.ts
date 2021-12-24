@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PreguntasService } from 'src/app/core/service/preguntas.service';
 import { Preguntas } from 'src/app/preguntas.model';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-preguntas',
   templateUrl: './preguntas.component.html',
@@ -15,8 +15,6 @@ export class PreguntasComponent implements OnInit {
   score: number = 0;
   ganancia: number = 0;
   borde:string=""
-  
-
   traer(event: any) {
     this.respuesta = event.target.value;
     setTimeout(() => {
@@ -37,20 +35,17 @@ export class PreguntasComponent implements OnInit {
         this.borde="border-danger border-5"
         
         setTimeout(() => {
-          
+          this.goBack()
           this.pregunta = 1;
           this.next();
           this.resultado = '';
           this.borde=''
-        
         }, 5000);
       } else {
       }
     }, 2000);
   }
-
-  constructor(private preguntasServive: PreguntasService) {}
-
+  constructor(private preguntasServive: PreguntasService, private router: Router) {}
   ngOnInit(): void {}
 
   get(id: number) {
@@ -61,19 +56,18 @@ export class PreguntasComponent implements OnInit {
     this.get(this.pregunta);
   }
   end() { 
+    localStorage.setItem('premio', 'this.ganancia');
     this.preguntas = undefined
     this.ganancia = this.score;
-    
-    
     setTimeout(() => {
+      this.goBack()
       this.score=0
       this.ganancia=0
       this.resultado = '';
       this.pregunta = 1;
-      
-      
     }, 5000);
   }
- 
-  
+  goBack() {
+    this.router.navigate(['']);
+    }
 }
