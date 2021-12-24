@@ -2,8 +2,9 @@
   class="btn btn-dark fs-3 btn btn-outline-warning"
   type="button"
   id="button-addon2"
+  (click)="get(pregunta)"
 >
-  pregunta
+  Empezar
 </button>
 
 <ng-container *ngIf="preguntas">
@@ -20,15 +21,13 @@
       <ul>
         <li *ngFor="let opciones of preguntas.opciones">
           <label>
-            <label>
-              <input
-                type="radio"
-                name="respuesta"
-                value="{{ opciones }}"
-                (change)="traer($event)"
-              />
-              {{ opciones }}
-            </label>
+            <input
+              type="radio"
+              name="respuesta"
+              value="{{ opciones }}"
+              (change)="traer($event)"
+            />
+            {{ opciones }}
           </label>
         </li>
       </ul>
@@ -36,10 +35,24 @@
         tu respuesta es : <br />
         {{ resultado }}
       </p>
-      <p class="card-text">
-        score : <br />
-        {{ score | currency: "COP":"symbol" }}
-      </p>
     </div>
   </div>
+</ng-container>
+<ng-container *ngIf="preguntas">
+  <p>
+    score : <br />
+    {{ score | currency: "COP":"symbol" }}
+  </p>
+  <button
+    class="btn btn-dark fs-3 btn btn-outline-warning"
+    type="button"
+    id="button-addon2"
+    (click)="end()"
+  >
+    Retirarme con dignidad
+  </button>
+</ng-container>
+
+<ng-container *ngIf="ganancia">
+  <p>{{ ganancia | currency: "COP":"symbol" }}</p>
 </ng-container>
