@@ -1,0 +1,119 @@
+
+
+<div class="d-grid gap-2 col-6 mx-auto">
+  <button
+  class="btn btn-secondary m-3 fs-3 btn btn-outline-dark"
+  type="button"
+  id="button-addon2"
+  (click)="get(pregunta)"
+>JUGAR<br>
+  Pasa y Gana
+</button>
+<ng-container *ngIf="preguntas">
+  <div class="m-3 d-flex justify-content-center">
+  <div>
+    <div class="input-group tanio mb-3">
+      <input
+        type="text"
+        [(ngModel)]="nombres"
+        class="form-control"
+        placeholder="Nombre del participante"
+        aria-label="Recipient's username"
+        aria-describedby="button-addon2"
+      />
+    </div>
+  </div>
+</div>
+</ng-container>
+<div class="d-flex justify-content-center ">
+<ng-container *ngIf="preguntas" >
+  <div
+    class="card text-white bg-dark mb-3  {{borde}} mb-5"
+    style="width: 18rem"
+  ><h2 class="title--cars text-center">PREGUNTA # {{pregunta}}</h2>
+    <div class="card-body">
+      <h5 class="card-title text-center">
+        {{ preguntas.pregunta  }}
+      </h5>
+      <ul>
+        <li *ngFor="let opciones of preguntas.opciones">
+          <label>
+            <input
+              type="radio"
+              name="respuesta"
+              value="{{ opciones }}"
+              (change)="traer($event)"
+            />
+            {{ opciones }}
+          </label>
+        </li>
+      </ul>
+      <p class="card-text text-center">
+        Tu respuesta es : <br />
+        {{ resultado }}
+      </p>
+    </div>
+  </div>
+</ng-container>
+</div>
+<div class=".flex-column ">
+<ng-container *ngIf="preguntas">
+  <div class="d-grid gap-2 col-6 mx-auto mb-2">
+  <div class="card ">
+    <div class="card-body">
+      <h5 class="card-title text-center fw-bold fs-3">Acumulado:</h5>
+      <p class="card-text text-center fw-bold fs-3"> {{ score | currency: "COP":"symbol" }}</p>
+    </div>
+  </div>
+</div>
+<div class="d-grid gap-2 col-6 mx-auto mb-2">
+  <button
+    class="btn btn-secondary m-3 fs-3 btn btn-outline-dark"
+    type="button"
+    id="button-addon2"
+    (click)="end()"
+  >
+    Retirarme 
+  </button>
+</div>
+</ng-container>
+</div>
+<div class="d-grid gap-2 col-6 mx-auto">
+  <button
+  class="btn btn-secondary m-3 fs-3 btn btn-outline-dark"
+  type="button"
+  id="button-addon2"
+  (click)="historicoLocal()"
+>
+Ultimo Ganador
+</button>
+</div>
+<ng-container *ngIf="historico">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Dinero Optenido</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{historico.nombre}}</td>
+        <td>{{historico.record | currency: "COP":"symbol"}}</td>
+      </tr>
+      </tbody>
+  </table>
+</ng-container>
+
+<ng-container *ngIf="ganancia">
+  <div class="d-grid gap-2 col-6 mx-auto mb-2">
+    <div class="card text-white bg-success mb-3 ">
+      <div class="card-body">
+        <h5 class="card-title text-center fw-bold fs-3">FELICIDADES <BR>
+          {{nombres|uppercase}}<BR>
+          Tu premio es de:</h5>
+        <p class="card-text text-center fw-bold fs-3"> {{ ganancia | currency: "COP":"symbol" }}</p>
+      </div>
+    </div>
+  </div>
+</ng-container>
