@@ -15,6 +15,8 @@ export class PreguntasComponent implements OnInit {
   score: number = 0;
   ganancia: number = 0;
   borde:string=""
+  nombres?:string=""
+  historico?:any
   traer(event: any) {
     this.respuesta = event.target.value;
     setTimeout(() => {
@@ -27,7 +29,7 @@ export class PreguntasComponent implements OnInit {
           this.next();
           this.resultado = '';
           this.borde=''
-        }, 3000);
+        }, 2000);
       }
       if (this.respuesta != this.preguntas?.respuesta) {
         this.resultado = 'Incorrecta';
@@ -51,15 +53,14 @@ export class PreguntasComponent implements OnInit {
   get(id: number) {
     this.preguntas = this.preguntasServive.id(id);
   }
-
   next() {
     this.get(this.pregunta);
   }
   end() { 
-    localStorage.setItem('premio', 'this.ganancia');
     this.preguntas = undefined
     this.ganancia = this.score;
     setTimeout(() => {
+      this.saveLocalS()
       this.goBack()
       this.score=0
       this.ganancia=0
@@ -69,5 +70,17 @@ export class PreguntasComponent implements OnInit {
   }
   goBack() {
     this.router.navigate(['']);
+    this.historicoLocal()
     }
+  saveLocalS(){
+      let jugador={
+        nombre: this.nombres,
+        record : this.ganancia
+      }
+      localStorage.setItem("jugador",JSON.stringify(jugador))
+      }
+    historicoLocal(){     
+      let persona = JSON.parse(localStorage.getItem("jugador")!);
+      this.historico = persona
+    }  
 }
