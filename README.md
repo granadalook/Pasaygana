@@ -18,5 +18,5 @@ npm install
 ```shell
 ng s -o
 ```
-El anterior comando     abrira la aplicacion en tu navegador pretedetminado en el puerto 4200 por defecto  y si dicho puero esta ocupado te sugerira un porerto libre
+El anterior comando     abrirá la aplicación en tu navegador predeterminado en el puerto 4200 por defecto  y si dicho puerto está ocupado te sugerirá un puerto libre
 
