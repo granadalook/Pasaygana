@@ -26,12 +26,11 @@
 </div>
 </ng-container>
 <div class="d-flex justify-content-center ">
- 
 <ng-container *ngIf="preguntas" >
   <div
     class="card text-white bg-dark mb-3  {{borde}} mb-5"
     style="width: 18rem"
-  ><h2 class="title--cars text-center">PREGUNTA #{{pregunta}}</h2>
+  ><h2 class="title--cars text-center">PREGUNTA # {{pregunta}}</h2>
     <div class="card-body">
       <h5 class="card-title text-center">
         {{ preguntas.pregunta  }}
@@ -110,7 +109,7 @@ Ultimo Ganador
   <div class="d-grid gap-2 col-6 mx-auto mb-2">
     <div class="card text-white bg-success mb-3 ">
       <div class="card-body">
-        <h5 class="card-title text-center fw-bold fs-3">FELICIDDES <BR>
+        <h5 class="card-title text-center fw-bold fs-3">FELICIDADES <BR>
           {{nombres|uppercase}}<BR>
           Tu premio es de:</h5>
         <p class="card-text text-center fw-bold fs-3"> {{ ganancia | currency: "COP":"symbol" }}</p>
