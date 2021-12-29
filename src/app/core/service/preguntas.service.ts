@@ -140,7 +140,12 @@ export class PreguntasService {
     {
       id: 21,
       pregunta: '¿Quién descubrió la penicilina?',
-      opciones: ['Antoine Lavoisier', 'Louis Pasteur', 'Alexander Fleming', 'Robert Boyle'],
+      opciones: [
+        'Antoine Lavoisier',
+        'Louis Pasteur',
+        'Alexander Fleming',
+        'Robert Boyle',
+      ],
       respuesta: 'Alexander Fleming',
     },
     {
@@ -157,23 +162,29 @@ export class PreguntasService {
     },
     {
       id: 24,
-      pregunta: '¿Qué animal contagió a los humanos en la pandemia de peste negra?',
+      pregunta:
+        '¿Qué animal contagió a los humanos en la pandemia de peste negra?',
       opciones: ['Las garrapatas', 'Las pulgas', 'Los mosquitos', 'las Ratas'],
       respuesta: 'Las pulgas',
     },
     {
       id: 25,
       pregunta: '¿la serpiente mas venenosa del mundo?',
-      opciones: ['La mamba negra', 'La Marina de pico', 'La cascabell', 'Cobra real'],
+      opciones: [
+        'La mamba negra',
+        'La Marina de pico',
+        'La cascabell',
+        'Cobra real',
+      ],
       respuesta: 'La Marina de pico',
     },
     {
       id: 26,
-      pregunta: '¿FELICIDADES CUMPLIESTE UN GRAN RETO ESPERO UNVIERTAS MUY BIEN EL DINERO<B>Retirate y tu dinero quedara guardado<B>?',
+      pregunta:
+        '¿FELICIDADES CUMPLIESTE UN GRAN RETO ESPERO UNVIERTAS MUY BIEN EL DINERO<B>Retirate y tu dinero quedara guardado<B>?',
       opciones: ['En salud', 'Vida', 'Amor', 'Viajes'],
       respuesta: '1',
     },
-    
   ];
   constructor() {}
   id(numero: number) {
