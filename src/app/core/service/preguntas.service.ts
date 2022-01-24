@@ -8,13 +8,13 @@ export class PreguntasService {
   preguntas: Array<Preguntas> = [
     {
       id: 1,
-      pregunta: '¿Cuantos dias  duro la guerra de los 1000 dias? ',
+      pregunta: '¿Cuántos días duro la guerra de los 1000 días?',
       opciones: ['1000 dias', '980 dias', '1005 dias', '1130 dias'],
       respuesta: '1130 dias',
     },
     {
       id: 2,
-      pregunta: '¿Cual es  el nombre del cuarto beatle?',
+      pregunta: '¿Cuál es el nombre del cuarto Beatles?',
       opciones: [
         'Norman Chapman',
         'Tommy Moore',
@@ -25,13 +25,13 @@ export class PreguntasService {
     },
     {
       id: 3,
-      pregunta: '¿De que nacionalidad era Albert Einstein? ',
+      pregunta: '¿De qué nacionalidad era Albert Einstein? ',
       opciones: ['Alemania', 'EE.UU', 'Inglaterra', 'Rusia'],
       respuesta: 'Alemania',
     },
     {
       id: 4,
-      pregunta: '¿Como se llama el segundo hombre en  pisar la luna?',
+      pregunta: '¿Cómo se llama el segundo hombre en pisar la luna?',
       opciones: [
         'Buzz Aldrin',
         'David Randolph Scott',
@@ -43,13 +43,13 @@ export class PreguntasService {
     {
       id: 5,
       pregunta:
-        '¿Cuanto horas tardara un automovil en recorer 660 kilometros a la velocidad de 60km/h?',
+        '¿Cuántas horas tardará un automóvil en recorrer 660 kilómetros a la velocidad de 60km/h?',
       opciones: ['15 horas', '11 horas', '8 horas', '16 horas'],
       respuesta: '11 horas',
     },
     {
       id: 6,
-      pregunta: '¿Donde esta transilvania?',
+      pregunta: '¿Dónde esta Transilvania?',
       opciones: ['Rumania', 'Serbia', 'Hungria', 'Eslovaquia'],
       respuesta: 'Rumania',
     },
@@ -79,7 +79,7 @@ export class PreguntasService {
     },
     {
       id: 11,
-      pregunta: 'En que año llego Cristóbal Colón a América',
+      pregunta: '¿En qué año llego Cristóbal Colón a América?',
       opciones: ['1454', '1570', '1492', '1489'],
       respuesta: '1492',
     },
@@ -140,7 +140,12 @@ export class PreguntasService {
     {
       id: 21,
       pregunta: '¿Quién descubrió la penicilina?',
-      opciones: ['Antoine Lavoisier', 'Louis Pasteur', 'Alexander Fleming', 'Robert Boyle'],
+      opciones: [
+        'Antoine Lavoisier',
+        'Louis Pasteur',
+        'Alexander Fleming',
+        'Robert Boyle',
+      ],
       respuesta: 'Alexander Fleming',
     },
     {
@@ -157,23 +162,29 @@ export class PreguntasService {
     },
     {
       id: 24,
-      pregunta: '¿Qué animal contagió a los humanos en la pandemia de peste negra?',
+      pregunta:
+        '¿Qué animal contagió a los humanos en la pandemia de peste negra?',
       opciones: ['Las garrapatas', 'Las pulgas', 'Los mosquitos', 'las Ratas'],
       respuesta: 'Las pulgas',
     },
     {
       id: 25,
-      pregunta: '¿la serpiente mas venenosa del mundo?',
-      opciones: ['La mamba negra', 'La Marina de pico', 'La cascabell', 'Cobra real'],
+      pregunta: '¿La serpiente más venenosa del mundo?',
+      opciones: [
+        'La mamba negra',
+        'La Marina de pico',
+        'La cascabell',
+        'Cobra real',
+      ],
       respuesta: 'La Marina de pico',
     },
     {
       id: 26,
-      pregunta: '¿FELICIDADES CUMPLIESTE UN GRAN RETO ESPERO UNVIERTAS MUY BIEN EL DINERO<B>Retirate y tu dinero quedara guardado<B>?',
+      pregunta:
+        'FELICIDADES, CUMPLISTE UN GRAN RETO ESPERO INVIERTAS MUY BIEN EL DINERO.,Retirate y tu dinero quedará guardado',
       opciones: ['En salud', 'Vida', 'Amor', 'Viajes'],
       respuesta: '1',
     },
-    
   ];
   constructor() {}
   id(numero: number) {

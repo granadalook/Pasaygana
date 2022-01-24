@@ -14,40 +14,43 @@ export class PreguntasComponent implements OnInit {
   pregunta: number = 1;
   score: number = 0;
   ganancia: number = 0;
-  borde:string=""
-  nombres?:string=""
-  historico?:any
+  borde: string = '';
+  nombres?: string = '';
+  historico?: any;
   traer(event: any) {
     this.respuesta = event.target.value;
     setTimeout(() => {
       if (this.respuesta === this.preguntas?.respuesta) {
         this.resultado = 'Correcta';
         this.score = this.score + 5000000;
-        this.borde="border-success border-5"
+        this.borde = 'border-success border-5';
         setTimeout(() => {
           this.pregunta++;
           this.next();
           this.resultado = '';
-          this.borde=''
+          this.borde = '';
         }, 2000);
       }
       if (this.respuesta != this.preguntas?.respuesta) {
         this.resultado = 'Incorrecta';
         this.score = 0;
-        this.borde="border-danger border-5"
-        
+        this.borde = 'border-danger border-5';
+
         setTimeout(() => {
-          this.goBack()
+          this.goBack();
           this.pregunta = 1;
           this.next();
           this.resultado = '';
-          this.borde=''
+          this.borde = '';
         }, 5000);
       } else {
       }
     }, 2000);
   }
-  constructor(private preguntasServive: PreguntasService, private router: Router) {}
+  constructor(
+    private preguntasServive: PreguntasService,
+    private router: Router
+  ) {}
   ngOnInit(): void {}
 
   get(id: number) {
@@ -56,31 +59,31 @@ export class PreguntasComponent implements OnInit {
   next() {
     this.get(this.pregunta);
   }
-  end() { 
-    this.preguntas = undefined
+  end() {
+    this.preguntas = undefined;
     this.ganancia = this.score;
     setTimeout(() => {
-      this.saveLocalS()
-      this.goBack()
-      this.score=0
-      this.ganancia=0
+      this.saveLocalS();
+      this.goBack();
+      this.score = 0;
+      this.ganancia = 0;
       this.resultado = '';
       this.pregunta = 1;
     }, 5000);
   }
   goBack() {
     this.router.navigate(['']);
-    this.historicoLocal()
-    }
-  saveLocalS(){
-      let jugador={
-        nombre: this.nombres,
-        record : this.ganancia
-      }
-      localStorage.setItem("jugador",JSON.stringify(jugador))
-      }
-    historicoLocal(){     
-      let persona = JSON.parse(localStorage.getItem("jugador")!);
-      this.historico = persona
-    }  
+    this.historicoLocal();
+  }
+  saveLocalS() {
+    let jugador = {
+      nombre: this.nombres,
+      record: this.ganancia,
+    };
+    localStorage.setItem('jugador', JSON.stringify(jugador));
+  }
+  historicoLocal() {
+    let persona = JSON.parse(localStorage.getItem('jugador')!);
+    this.historico = persona;
+  }
 }
