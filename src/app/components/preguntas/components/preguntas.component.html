@@ -11,6 +11,7 @@
   <ng-container *ngIf="preguntas">
     <div class="m-3 d-flex justify-content-center">
       <div>
+        <h2>Ingresa nombre del participante</h2>
         <div class="input-group tanio mb-3">
           <input
             type="text"
@@ -87,7 +88,7 @@
       id="button-addon2"
       (click)="historicoLocal()"
     >
-      Ultimo Ganador
+      Último Ganador
     </button>
   </div>
   <ng-container *ngIf="historico">
@@ -95,7 +96,7 @@
       <thead>
         <tr>
           <th scope="col">Nombre</th>
-          <th scope="col">Dinero Optenido</th>
+          <th scope="col">Dinero Obtenido</th>
         </tr>
       </thead>
       <tbody>
