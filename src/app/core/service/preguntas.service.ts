@@ -9,8 +9,8 @@ export class PreguntasService {
     {
       id: 1,
       pregunta: '¿Cuántos días duro la guerra de los 1000 días?',
-      opciones: ['1000 dias', '980 dias', '1005 dias', '1130 dias'],
-      respuesta: '1130 dias',
+      opciones: ['1000 días', '980 días', '1005 días', '1130 días'],
+      respuesta: '1130 días',
     },
     {
       id: 2,
@@ -86,8 +86,8 @@ export class PreguntasService {
     {
       id: 12,
       pregunta: '¿Cuántos lados tiene un heptágono?',
-      opciones: ['8', '5', '7', '9'],
-      respuesta: '7',
+      opciones: ['8 lados', '5 lados', '7 lados', '9 lados'],
+      respuesta: '7 lados',
     },
     {
       id: 13,
@@ -98,14 +98,14 @@ export class PreguntasService {
     {
       id: 14,
       pregunta: '¿Cuántos huesos tiene el cuerpo humano?',
-      opciones: ['202', '206', '201', '208'],
-      respuesta: '206',
+      opciones: ['202 huesos', '206 huesos', '201 huesos', '208 huesos'],
+      respuesta: '206 huesos',
     },
     {
       id: 15,
       pregunta: '¿Cuántas notas musicales existen?',
-      opciones: ['12', '5', '7', '9'],
-      respuesta: '12',
+      opciones: ['12 notas', '5 notas', '7 notas', '9 notas'],
+      respuesta: '12 notas',
     },
     {
       id: 16,
@@ -157,8 +157,8 @@ export class PreguntasService {
     {
       id: 23,
       pregunta: '¿Cuántos años son un lustro?',
-      opciones: ['1', '8', '5', '7'],
-      respuesta: '5',
+      opciones: ['2 años', '8 años', '5 años', '7 años'],
+      respuesta: '5 años',
     },
     {
       id: 24,
